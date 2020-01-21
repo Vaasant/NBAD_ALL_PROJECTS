@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Carrer Fair</title>
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+  </head>
+  <body>
+    <!-- header start --------------------------------------------------------->
+
+    <% include partials/header.ejs %>
+    <!-- header end ----------------------------------------------------------->
+    <!-- navigation start ----------------------------------------------------->
+
+      <% include partials/navigation.ejs %>
+    <!-- navigation end ----------------------------------------------------->
+
+<!-- ALL connections Start ---------------------------------------------------------->
+<%if((qs.length)>1){%>
+            <div class="hdTitle">
+              <span class="border orangeclr italic">FULL TIME</span>
+            </div>
+<!-- Full Time Start ---------------------------------------------------------->
+          <%for(i=0;i<=qs.length-1;i++){
+            if(qs[i].typeOfJob== "FULL TIME"){ %>
+              <div class="connectionscard">
+                <div class="companyName" >
+                  <%=qs[i].companyName%>
+                </div>
+                                  <div class="row">
+                                        <div class="column1">
+                                          <img  src="<%=qs[i].imageurl%>" alt="<%=qs[i].companyName%>" class="connectionimg" >
+                                        </div>
+                                        <div class="column2 whiteclr">
+                                          <%=qs[i].host%><br><%=qs[i].dateAndTime%> <br><%=qs[i].location%>
+                                        </div>
+
+                                        <div class="column3 whiteclr">
+                                          &nbsp;&nbsp;&nbsp;&nbsp;  Ready to apply ? <br>
+                                          <form action="../savedConnections" >
+                                          <button class="button" name="buttonValue" value="yes" > Yes</button>
+                                          <button class="button button3" name="buttonValue" value="no" >No</button>
+                                          <button class="button button2" name="buttonValue" value="maybe">Maybe</button>
+                                          </form>
+                                        </div>
+                                  </div>
+                                  <div class="details">
+                                    <h2 class="orangeclr italic">
+                                      Details
+                                    </h2>
+                                    <p class="whiteclr">
+                                      <%=qs[i].details %>
+                                    </p>
+
+                                  </div>
+
+              </div>
+
+          <%  } %>
+          <%} %>
+
+
+
+  <!--- Full Time End --------------------------------------------------------->
+
+
+  <!-- Internship Start ------------------------------------------------------->
+                      <div class="hdTitle">
+
+                        <span class="border orangeclr italic">INTERNSHIP</span>
+                      </div>
+<!-- Internship Start ------------------------------------------------------->
+                          <%for(i=0;i<=qs.length-1;i++){
+                            if(qs[i].typeOfJob== "INTERNSHIP"){ %>
+                              <div class="connectionscard">
+                                <div class="companyName" >
+                                  <%=qs[i].companyName %>
+                                </div>
+                                                  <div class="row">
+                                                        <div class="column1">
+                                                          <img  src="<%=qs[i].imageurl%>" alt="<%=qs[i].companyName%>" class="connectionimg" >
+                                                        </div>
+                                                        <div class="column2 whiteclr">
+                                                          <%=qs[i].host%><br><%=qs[i].dateAndTime%> <br><%=qs[i].location%>
+                                                        </div>
+
+                                                        <div class="column3 whiteclr">
+                                                          &nbsp;&nbsp;&nbsp;&nbsp;  Ready to apply ? <br>
+                                                          <form action="../savedConnections">
+                                                          <button class="button" name="buttonValue" value="yes" > Yes</button>
+                                                          <button class="button button3" name="buttonValue" value="no" >No</button>
+                                                          <button class="button button2" name="buttonValue" value="maybe">Maybe</button>
+                                                          </form>
+                                                        </div>
+                                                  </div>
+                                                  <div class="details">
+                                                    <h2 class="orangeclr italic">
+                                                      Details
+                                                    </h2>
+                                                    <p class="whiteclr">
+                                                      <%=qs[i].details %>
+                                                    </p>
+
+                                                  </div>
+
+                              </div>
+
+
+                            <%  } %>
+                          <%} %>
+
+<!-- Internship end ------------------------------------------------------->
+
+
+<%}%>
+<!-- ALL connections end ------------------------------------------------------>
+
+<!-- Single connections start ------------------------------------------------------>
+<%if((qs.length) == 1){%>
+
+  <%for(i=0;i<=qs.length-1;i++){%>
+          <div class="hdTitle">
+            <span class="border orangeclr italic"><%=qs[i].typeOfJob%></span>
+          </div>
+          <div class="connectionscard2">
+            <div class="companyName" >
+              <%=qs[i].companyName %>
+            </div>
+            <div class="row">
+                  <div class="column1">
+                    <img  src="<%=qs[i].imageurl%>" alt="<%=qs[i].companyName%>" class="connectionimg" >
+                  </div>
+                  <div class="column2 whiteclr">
+                    <%=qs[i].host%><br><%=qs[i].dateAndTime%> <br><%=qs[i].location%>
+                  </div>
+                  <div class="column3 whiteclr">
+                    &nbsp;&nbsp;&nbsp;&nbsp;  Ready to apply ? <br>
+                    <form action="../savedConnections">
+                    <button class="button" name="buttonValue" value="yes"> Yes</button>
+                    <button class="button button3" name="buttonValue" value="no">No</button>
+                    <button class="button button2" name="buttonValue" value="maybe">Maybe</button>
+                    </form>
+                  </div>
+            </div>
+            <div class="details">
+              <h2 class="orangeclr italic">
+                Details
+              </h2>
+              <p class="whiteclr">
+                <%=qs[i].details %>
+              </p>
+            </div>
+          </div>
+    <%} %>
+<%}%>
+<!-- Single connections end ------------------------------------------------------>
+
+<!-- footer start ------------------------------------------------------>
+
+<% include partials/footer.ejs %>
+
+<!-- Footer end ------------------------------------------------------>
+
+  </body>
+</html>

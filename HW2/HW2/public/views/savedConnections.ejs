@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Carrer Fair</title>
+      <link rel="stylesheet" type="text/css" href="../assets/stylesheets/style.css">
+  </head>
+  <body>
+  <!-- header start --------------------------------------------------------->
+
+    <% include partials/headerSavedConnection.ejs %>
+
+  <!-- header end ----------------------------------------------------------->
+
+  <!-- navigation start ----------------------------------------------------->
+
+    <% include partials/navigationSavedConnection.ejs %>
+
+  <!-- navigation end ----------------------------------------------------->
+
+        <div >
+          <h3 class="bold"> <span class="border orangeclr">Niner's Saved Companies</span></h3>
+        </div>
+        <div >
+          <table>
+            <tr>
+              <th class="orangeclr">Name of companies</th>
+              <th class="orangeclr">Type of Job</th>
+              <th class="orangeclr">Applied?</th>
+              <th class="orangeclr"></th>
+            </tr>
+            <tr>
+              <td class="whiteclr">Bank Of America</td>
+              <td class="whiteclr">Internship</td>
+              <td class="whiteclr">Yes</td>
+              <td>
+                <form action="../connections" >
+                <button class="button"  > Update</button>
+                <button formaction="savedConnections" class="button button3" > Remove</button>
+                </form>
+              </td>
+            </tr>
+            <tr>
+              <td class="whiteclr">Wells Fargo</td>
+              <td class="whiteclr">Full Time</td>
+              <td class="whiteclr">Maybe</td>
+              <td><form action="../connections" >
+              <button class="button"  > Update</button>
+              <button formaction="savedConnections" class="button button3" > Remove</button>
+              </form>
+              </td>
+            </tr>
+            <tr>
+              <td class="whiteclr">Credit Karma</td>
+              <td class="whiteclr">Full Time</td>
+              <td class="whiteclr">No</td>
+              <td><form action="../connections" >
+              <button class="button"  > Update</button>
+              <button formaction="savedConnections" class="button button3" > Remove</button>
+              </form>
+              </td>
+            </tr>
+            <tr>
+              <td class="whiteclr">Cummins</td>
+              <td class="whiteclr">Internship</td>
+              <td class="whiteclr">Yes</td>
+              <td><form action="../connections" >
+              <button class="button"  > Update</button>
+              <button formaction="/savedConnections" class="button button3" > Remove</button>
+              </form>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+<!-- Footer start ------------------------------------------------------------->
+
+  <% include partials/footer.ejs %>
+
+<!-- Footer end --------------------------------------------------------------->
+  </body>
+</html>
